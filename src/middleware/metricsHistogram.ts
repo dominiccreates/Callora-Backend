@@ -58,7 +58,7 @@ export function adminHistogramMiddleware(
   next: NextFunction,
 ): void {
   const start = performance.now();
-  const route = req.baseUrl + (req.route?.path ?? req.path);
+  const route = req.baseUrl + (req.route?.path ?? '/unmatched');
 
   res.on('finish', () => {
     const durationMs = performance.now() - start;
